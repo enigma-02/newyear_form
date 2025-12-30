@@ -81,6 +81,7 @@ input:focus, textarea:focus {
 .rating-box { margin-bottom: 20px; }
 .stars { display: flex; flex-direction: row-reverse; justify-content: center; font-size: 35px; }
 /* Better way to hide radio buttons for validation */
+/* Update this specific part in your style.css */
 .stars input {
     position: absolute;
     opacity: 0;
@@ -124,3 +125,4 @@ input:focus, textarea:focus {
 
 
 #form-status { margin-top: 15px; font-weight: bold; }
+
