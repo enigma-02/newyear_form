@@ -1,0 +1,118 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /* A rich, golden-yellow gradient that isn't too flat */
+    background: linear-gradient(135deg, #FFD700, #FDB931, #FF8C00);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+    overflow: hidden;
+}
+
+/* Background Emojis - Floating Animation */
+.background-decorations {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.emoji {
+    position: absolute;
+    font-size: 2rem;
+    filter: drop-shadow(0 0 10px rgba(0,0,0,0.2));
+    animation: float 6s infinite ease-in-out;
+}
+
+/* Position emojis randomly */
+.emoji:nth-child(1) { top: 10%; left: 10%; animation-delay: 0s; }
+.emoji:nth-child(2) { top: 20%; right: 15%; animation-delay: 1s; }
+.emoji:nth-child(3) { bottom: 15%; left: 20%; animation-delay: 2s; }
+.emoji:nth-child(4) { bottom: 10%; right: 10%; animation-delay: 3s; }
+.emoji:nth-child(5) { top: 50%; left: 5%; animation-delay: 4s; }
+
+@keyframes float {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(20deg); }
+}
+
+/* Glassmorphism Form Container */
+#newYearReviewForm {
+    background: rgba(255, 255, 255, 0.25); /* White tint */
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 40px;
+    border-radius: 24px;
+    width: 400px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    text-align: center;
+}
+
+h2 { color: #4b3d00; margin-bottom: 5px; }
+p { color: #6d5900; font-size: 0.9rem; margin-bottom: 25px; }
+
+.input-group { text-align: left; margin-bottom: 15px; }
+.input-group label { display: block; font-weight: 600; color: #4b3d00; margin-bottom: 5px; font-size: 0.85rem; }
+
+input, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.5);
+    outline: none;
+    transition: 0.3s;
+    color: #4b3d00;
+}
+
+input:focus, textarea:focus {
+    background: white;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+/* Stars Rating */
+.rating-box { margin-bottom: 20px; }
+.stars { display: flex; flex-direction: row-reverse; justify-content: center; font-size: 35px; }
+.stars input { display: none; }
+.stars label {
+    cursor: pointer;
+    color: #b19400; /* Darker gold for empty stars */
+    transition: 0.3s;
+    text-shadow: 0 0 2px rgba(0,0,0,0.1);
+}
+
+.stars input:checked ~ label,
+.stars label:hover,
+.stars label:hover ~ label {
+    color: #ffffff; /* White stars to contrast with yellow background */
+    text-shadow: 0 0 15px #fff, 0 0 20px #FFD700;
+}
+
+/* Button */
+#submitBtn {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 12px;
+    background: #4b3d00; /* Dark brown/gold for contrast */
+    color: white;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#submitBtn:hover {
+    background: #000;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+#form-status { margin-top: 15px; font-weight: bold; }

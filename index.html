@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Year Review - Festive Feedback</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="background-decorations">
+        <span class="emoji">✨</span>
+        <span class="emoji">🎉</span>
+        <span class="emoji">🎊</span>
+        <span class="emoji">✨</span>
+        <span class="emoji">🎉</span>
+    </div>
+
+    <div class="review-container">
+        <form id="newYearReviewForm" action="https://formspree.io/f/mgoeqydw" method="POST">
+            <h2>Cheers to 2025! 🥂</h2>
+            <p>We'd love to hear your thoughts on our New Year celebration.</p>
+
+            <div class="input-group">
+                <label>Your Name</label>
+                <input type="text" name="name" required placeholder="Enter your name">
+            </div>
+
+            <div class="rating-box">
+                <label>Rate your experience:</label>
+                <div class="stars">
+                    <input type="radio" id="star5" name="rating" value="5" required><label for="star5">★</label>
+                    <input type="radio" id="star4" name="rating" value="4"><label for="star4">★</label>
+                    <input type="radio" id="star3" name="rating" value="3"><label for="star3">★</label>
+                    <input type="radio" id="star2" name="rating" value="2"><label for="star2">★</label>
+                    <input type="radio" id="star1" name="rating" value="1"><label for="star1">★</label>
+                </div>
+            </div>
+
+            <div class="input-group">
+                <label>Your Review</label>
+                <textarea name="message" rows="4" required placeholder="Tell us something wonderful..."></textarea>
+            </div>
+
+            <button type="submit" id="submitBtn">Send Feedback 🎉</button>
+            
+            <p id="form-status"></p>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
