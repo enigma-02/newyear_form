@@ -80,7 +80,14 @@ input:focus, textarea:focus {
 /* Stars Rating */
 .rating-box { margin-bottom: 20px; }
 .stars { display: flex; flex-direction: row-reverse; justify-content: center; font-size: 35px; }
-.stars input { display: none; }
+/* Better way to hide radio buttons for validation */
+.stars input {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+    pointer-events: none;
+}
 .stars label {
     cursor: pointer;
     color: #b19400; /* Darker gold for empty stars */
@@ -114,5 +121,6 @@ input:focus, textarea:focus {
     transform: translateY(-3px);
     box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 }
+
 
 #form-status { margin-top: 15px; font-weight: bold; }
