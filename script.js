@@ -7,10 +7,16 @@ if (!form) {
 
 form.addEventListener('submit', async (e) => {
     e.preventDefault();
-    console.log("Submit button clicked! Processing...");
 
-    const btn = document.getElementById('submitBtn');
-    
+    // NEW: Manual check for the rating
+    const rating = form.querySelector('input[name="rating"]:checked');
+    if (!rating) {
+        status.style.color = "red";
+        status.innerHTML = "⚠️ Please select a star rating!";
+        return; // Stops the form from sending if no star is picked
+    }
+
+    // ... (rest of your existing code: btn.innerText = "Sending...", etc.)
     // 1. Change button state
     btn.innerText = "Sending... 🚀";
     btn.disabled = true;
@@ -47,3 +53,4 @@ form.addEventListener('submit', async (e) => {
         btn.innerText = "Try Again";
     }
 });
+
